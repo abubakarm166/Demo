@@ -1,0 +1,16 @@
+{% extends "base.html" %}  
+{% load static %}
+{% block body %}
+    <div class="container mt-5">
+        {% if ENABLE_REAL_PAYMENTS %}
+            <h1>Payment Cancelled</h1>
+            <p>Your payment was cancelled. You can try again whenever you're ready.</p>
+        {% else %}
+            <h1>Demo Only</h1>
+            <p>This demo skips real payments, so there's nothing to cancel.</p>
+        {% endif %}
+        {% comment %} <p>You can now enjoy the benefits of your subscription.</p> {% endcomment %}
+        <a href="{% url 'index' %}" class="btn btn-primary">Go Back</a>
+    </div>
+    {% include "footer.html" %}
+{% endblock body %}

@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static "assets/css/chatbot.css" %}">
+<style>
+  .message {
+    max-width: 60%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    display: inline-block;
+  }
+
+  #image-input {
+    display: none;
+  }
+
+  .user-message {
+    background-color: #2D3748;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .bot-message {
+    background-color: #EDF2F7;
+    color: #2D3748;
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  #chat-window {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    /* background: #f9f9f9; */
+  }
+
+  .chat-image {
+    max-width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+
+  .divOFIcons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+  }
+
+  .divOFIcons input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .divOFIcons label {
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-preview {
+    max-width: 100px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    margin: 5px 0;
+  }
+
+  .inputbox_main {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .inputbox_inner {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+  }
+
+  .inputbox_inner button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2D3748;
+    color: white;
+    cursor: pointer;
+  }
+
+  .inputbox_inner button:hover {
+    background-color: #1a202c;
+  }
+
+  #image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* ✅ Responsive Layout */
+  @media screen and (max-width: 768px) {
+    .message {
+      max-width: 90%;
+    }
+
+    .divOFIcons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .inputbox_inner {
+      justify-content: center;
+    }
+
+    .image-preview {
+      max-width: 80px;
+    }
+  }
+</style>
+
+
+    <div class="ctrl_big_bg">
+        <section class="hero_section">
+            <div class="container">
+                <div class="hero_text_main_div">
+                    <span>Become the Man You’re Meant to Be <i class="bi bi-arrow-right-short"></i></span>
+                    <h1>Discipline. Direction. Purpose.</h1>
+                    <p>Operator isn’t just another productivity tool — it’s a guided system for young men ready to lead themselves. Built for those who want more from life, but don’t know where to start. No fluff. Just action.</p>
+                    <button type="button" class="UI_btn">Join the Mission </button>
+                    <h6>Trusted by 4,000+ companies</h6>
+                    <div class="hero_logos_main">
+                        <img src="{% static "assets/img/HL1.png" %}" alt="...">
+                        <img src="{% static "assets/img/HL2.png" %}" alt="...">
+                        <img src="{% static "assets/img/HL3.png" %}" alt="...">
+                        <img src="{% static "assets/img/HL4.png" %}" alt="...">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="chatbot_section">
+            <div class="container-fluid">
+                <div class="chatbot_main_div">
+                 
+
+
+                    <div class="main" id="main">
+                        <div class="chat-header">
+                            <div class="chat_header_title">
+                                <h2>Chat UI</h2>
+                            </div>
+                             
+                        </div>
+                        <div class="chat-window" id="chat-window">
+                        <!-- Messages appear here -->
+                        
+                        </div>
+                       <div class="inputbox_main">
+  <div class="w-100 divOFIcons">
+    <input type="text" class="w-100" id="user-input" placeholder="Send a message..." />
+    
+    <label for="image-input" class="image-label">
+      <i class="bi bi-card-image text-dark fs-4"></i>
+    </label>
+    
+    <input type="file" id="image-input" accept="image/*" />
+  </div>
+
+  <!-- 👇 Image Preview -->
+  <div id="image-preview-container"></div>
+
+  <div class="inputbox_inner">
+    <button onclick="sendMessage()">Submit</button>
+  </div>
+</div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="{% static "assets/js/script.js" %}"></script>
+    <script>
+            function switchModel(btn) {
+                document.querySelectorAll('.model-switch button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+    
+            
+    
+            function toggleFullscreen() {
+                const main = document.getElementById('main');
+                main.classList.toggle('fullscreen');
+            }
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar.classList.contains('show')) {
+                    sidebar.classList.remove('show');
+                    sidebar.classList.add('hidden');
+                } else {
+                    sidebar.classList.remove('hidden');
+                    sidebar.classList.add('show');
+                }
+            }
+    
+    
+    </script>
+  <script>
+  let selectedImagePreviewURL = null;
+
+  document.getElementById('image-input').addEventListener('change', function (event) {
+    const previewContainer = document.getElementById('image-preview-container');
+    previewContainer.innerHTML = ''; // Clear previous preview
+
+    const file = event.target.files[0];
+    if (file) {
+      selectedImagePreviewURL = URL.createObjectURL(file);
+      const img = document.createElement('img');
+      img.src = selectedImagePreviewURL;
+      img.className = 'image-preview';
+      previewContainer.appendChild(img);
+    }
+  });
+
+  async function sendMessage() {
+    const input = document.getElementById('user-input');
+    const imageInput = document.getElementById('image-input');
+    const chatWindow = document.getElementById('chat-window');
+    const previewContainer = document.getElementById('image-preview-container');
+
+    const userMessage = input.value.trim();
+    const imageFile = imageInput.files[0];
+
+    if (!userMessage && !imageFile) return;
+
+    // === USER MESSAGE ===
+    const userDiv = document.createElement('div');
+    userDiv.className = 'message user-message';
+    if (userMessage) userDiv.textContent = userMessage;
+
+    if (imageFile) {
+      const img = document.createElement('img');
+      img.src = selectedImagePreviewURL;
+      img.className = 'chat-image';
+      userDiv.appendChild(img);
+    }
+
+    chatWindow.appendChild(userDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    // === BOT TYPING PLACEHOLDER ===
+    const botDiv = document.createElement('div');
+    botDiv.className = 'message bot-message';
+    botDiv.textContent = 'Typing...';
+    chatWindow.appendChild(botDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
+    // === FORM DATA ===
+    const formData = new FormData();
+    formData.append('message', userMessage);
+    if (imageFile) {
+      formData.append('image', imageFile);
+    }
+
+    try {
+      const CHAT_ENDPOINT = "{% url 'smart_chat_api' %}";
+      const response = await fetch(CHAT_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      botDiv.textContent = data.response || data.error || 'No response received.';
+    } catch (error) {
+      botDiv.textContent = '❌ Error getting response.';
+      botDiv.style.color = 'red';
+    }
+
+    // === CLEAR INPUTS ===
+    input.value = '';
+    imageInput.value = '';
+    previewContainer.innerHTML = '';
+    selectedImagePreviewURL = null;
+  }
+</script>
+
+
+
+
+
+{% endblock body %}

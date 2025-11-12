@@ -1,0 +1,34 @@
+{% extends "base.html" %}  
+{% load static %}
+{% block body %}
+    <div style="height:60vh" class="container my-5 mx-auto d-flex flex-column align-items-center justify-content-center text-white">
+        {% if ENABLE_REAL_PAYMENTS %}
+            <h1>Payment Successful</h1>
+            <p>Thank you for your payment! Your transaction was successful.</p>
+        {% else %}
+            <h1>Demo Activated</h1>
+            <p>No payment was processed. Enjoy exploring the Operator experience.</p>
+        {% endif %}
+
+        {% if plan_summary.name %}
+            <div class="mt-4 text-center">
+                <h4 class="mb-1">{{ plan_summary.name }}</h4>
+                {% if plan_summary.price_display %}
+                    <p class="mb-3">{{ plan_summary.price_display }}</p>
+                {% endif %}
+                {% if plan_summary.description %}
+                    <p class="mb-3">{{ plan_summary.description }}</p>
+                {% endif %}
+                {% if plan_summary.features %}
+                    <ul class="text-start">
+                        {% for feature in plan_summary.features %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endif %}
+        <a href="{% url 'chatbot' %}" class="btn btn-primary">Go to Chat</a>
+        </div>
+    {% include "footer.html" %}
+{% endblock body %}

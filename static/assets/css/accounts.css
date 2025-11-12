@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@font-face {
+    font-family: "Clash_ExtraLight";
+    src: url(../fonts/Extralight.otf);
+}
+@font-face {
+    font-family: "Clash_Light";
+    src: url(../fonts/Light.otf);
+}
+@font-face {
+    font-family: "Clash_Medium";
+    src: url(../fonts/Medium.otf);
+}
+@font-face {
+    font-family: "Clash_Regular";
+    src: url(../fonts/Regular.otf);
+}
+@font-face {
+    font-family: "Clash_Bold";
+    src: url(../fonts/Bold.otf);
+}
+@font-face {
+    font-family: "Clash_SemiBold";
+    src: url(../fonts/Semibold.otf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Clash_Regular";
+    background: #010314;
+}
+.accounts_section{
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+.accounts_card_body_div{
+    background: #08080DEE;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid #2A2B3A;
+    padding: 30px;
+}
+.accounts_title h1{
+    font-family: "Clash_Medium";
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 141%;
+    letter-spacing: 4%;
+    text-align: center;
+    color: #FFFFFF;
+}
+.accounts_input{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+    position: relative;
+}
+.accounts_input label{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+.accounts_input input{
+    width: 100%;
+    border: 1px solid #575757;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background-color: #08080DEE;
+    outline: none;
+    transition: ease-in-out all 0.2s;
+    color: #FFFFFF99;
+}
+.accounts_input i{
+    position: absolute;
+    right: 15px;
+    top: 37px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.accounts_input input:focus-visible{
+    border: 1px solid #13E8F7;
+}
+.forgot_txt{
+    text-align: end;
+    margin-top: 6px;
+}
+.forgot_txt a{
+    color: #13E8F7;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    cursor: pointer;
+}
+.terms_txt{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.terms_txt label{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: #FFFFFF;
+    user-select: none;
+    cursor: pointer;
+}
+.terms_txt label a{
+    color: #13E8F7;
+}
+.accounts_btn{
+    margin-bottom: 20px;
+}
+.accounts_btn button{
+    width: 100%;
+    box-shadow: 0px 0px 0px 3px #1CFFFF2B;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #2b959c;
+}
+.ortxt{
+    position: relative;
+    border: 1px solid #FFFFFF;
+    margin-top: 40px;
+}
+.ortxt span{
+    color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #08080d;
+    padding: 2px 30px;
+}
+.last_btn button{
+    width: 100%;
+    box-shadow: 0px 0px 0px 3px #1CFFFF2B;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #2b959c;
+}    
+.last_ptxt{
+    font-family: "Clash_Light";
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #FFFFFF;
+    user-select: none;
+    text-align: center;
+}
+.last_ptxt a{
+    color: #139EBC;
+}
+.modal-header h1{
+    font-family: "Clash_Medium";
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 141%;
+    text-align: center;
+    margin-bottom: 0;
+    color: #FFFFFF;
+}
+.modal-header{
+    margin-bottom: 0;
+    text-align: center;
+    justify-content: center;
+    border-bottom: none;
+}
+.modal-content{
+    background-color: #08080D;
+}
+.modal_txt_div h5{
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF99;
+    margin-top: 15px;
+}
+.modal_txt_div p{
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF99;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.modal_txt_div h3{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+.modal_txt_div ul li{
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF99;
+    margin-top: 5px;
+}
+.modal_txt_div span{
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF99;
+    display: block;
+}
+.modal-body::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+@media (max-width: 576px){
+    .accounts_title h1 {
+        font-weight: 500;
+        font-size: 26px;
+    }
+    .accounts_card_body_div {
+        padding: 30px 15px;
+        border-radius: 12px;
+    }
+    .forgot_txt a {
+        color: #13E8F7;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}

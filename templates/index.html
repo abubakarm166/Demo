@@ -1,0 +1,285 @@
+{% extends "base.html" %}  
+{% load static %}
+{% block body %}
+    <div class="ctrl_big_bg">
+        <section class="hero_section">
+            <div class="container">
+                <div class="hero_text_main_div">
+                    <span>Become the Man You’re Meant to Be <i class="bi bi-arrow-right-short"></i></span>
+                    <h1>Discipline. Direction. Purpose.</h1>
+                    <p>Operator isn’t just another productivity tool — it’s a guided system for young men ready to lead themselves. Built for those who want more from life, but don’t know where to start. No fluff. Just action.</p>
+                    <button type="button" class="UI_btn">Join the Mission </button>
+                    <div class="hero_logos_main mt-3">
+                        <img src="{% static "assets/img/HL1.png" %}" alt="...">
+                        <img src="{% static "assets/img/HL2.png" %}" alt="...">
+                        <img src="{% static "assets/img/HL3.png" %}" alt="...">
+                        <img src="{% static "assets/img/HL4.png" %}" alt="...">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="works_section">
+            <div class="container">
+                <div class="title_div">
+                    <h1>how it works</h1>
+                </div>
+                <div class="works_card_main_div">
+                    <div class="works_card_inner">
+                         <div class="row">
+                            <div class="col-lg-8 col-md-6 col-sm-12">
+                                <div class="works_card_text1">
+                                    <h3>Set The Frame</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="works_card_text2">
+                                    <p> Operator will asked: Who are you, really? The more real you are, the more tailored your coaching becomes.</p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="works_card_inner">
+                         <div class="row">
+                            <div class="col-lg-8 col-md-6 col-sm-12">
+                                <div class="works_card_text1">
+                                    <h3>Daily Prompts </h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="works_card_text2">
+                                    <p>Each day, Operator gives you a small, sharp question or challenge — designed to wake you up, not wear you down.</p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="works_card_inner">
+                         <div class="row">
+                            <div class="col-lg-8 col-md-6 col-sm-12">
+                                <div class="works_card_text1">
+                                    <h3>Real Conversations </h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="works_card_text2">
+                                    <p> Talk to Operator like you would a coach or older brother. You can vent, plan, reflect, or build — but be honest. </p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="works_card_inner">
+                         <div class="row">
+                            <div class="col-lg-8 col-md-6 col-sm-12">
+                                <div class="works_card_text1">
+                                    <h3>Build, Track, Repeat </h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="works_card_text2">
+                                    <p>As your answers deepen, your system learns. You’ll get smarter questions, sharper nudges, and more insight. </p>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="Operator_section">
+        <div class="container">
+            <div class="operator_text_main">
+                <h1>Operator isn’t about becoming a productivity machine.</h1>
+                <p>It’s about learning to lead yourself. Sometimes that means building better habits. Sometimes it means admitting what’s breaking you. Either way — this is your mirror. And it’s time to stop lying to it. </p>
+                <button type="button" class="UI_btn">Join the Mission</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing_section" id="Pricing">
+        <div class="container mt-5">
+            <div class="pricing_title_div">
+                    <h1>A plan for every need.</h1>
+                    <p>Whether you are just starting or require massive scale, we have a solution.</p>
+                </div>
+            <div class="row align-items-center">
+                {% comment %} <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="pricing_card_body_div">
+                        <span class="pri_tag1"><img src="{% static "assets/img/heart.png" %}" alt="">Quarterly Reset</span>
+                        <h1>€24/3 <sub>months (~€8/month)</sub></h1>
+                        <p>Best for guys who want change — and want to commit. </p>
+                        <button type="button">Sign up</button>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Daily Prompts & Guidance</li>
+                            <li><i class="bi bi-check-circle"></i> Custom Vision-Building Plan </li>
+                            <li><i class="bi bi-check-circle"></i> Full GPT-4 Chat Access</li>
+                            <li><i class="bi bi-check-circle"></i> Weekly Identity Reflection</li>
+                            <li><i class="bi bi-check-circle"></i> Community Chat Access</li>
+                            <li><i class="bi bi-check-circle"></i> Monthly Personal Audit Templates </li>
+                            <li><i class="bi bi-check-circle"></i> Early Feature Access</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="pricing_card_body_div active_pri_card">
+                        <span class="popular_tag">Most Popular</span>
+                        <span class="pri_tag2"><img src="{% static "assets/img/tag2.png" %}" alt="">Monthly Discipline</span>
+                        <h1>€9/<sub>months </sub></h1>
+                        <h6>7-day free trial</h6>
+                        <p>Entry-level access for guys who want to test the waters — but stay locked in. </p>
+                        <button type="button">Sign up</button>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Daily Prompts & Guidance</li>
+                            <li><i class="bi bi-check-circle"></i> Full GPT-4 Chat Access </li>
+                            <li><i class="bi bi-check-circle"></i> Weekly Identity Reflection</li>
+                            <li><i class="bi bi-check-circle"></i> Community Chat Access</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="pricing_card_body_div">
+                        <span class="pri_tag1"><img src="{% static "assets/img/heart.png" %}" alt="">Quarterly Reset</span>
+                        <h1>€79/ <sub>year (~€6.58/month)</sub></h1>
+                        <p>Built for the serious. One-time investment, 12 months of no-excuses growth.</p>
+                        <button type="button">Request Access</button>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Personalized Welcome Breakdown</li>
+                            <li><i class="bi bi-check-circle"></i> Daily Prompts & Guidance</li>
+                            <li><i class="bi bi-check-circle"></i>  “Mental Rebuild” Guidebook </li>
+                            <li><i class="bi bi-check-circle"></i> Full GPT-4 Chat Access</li>
+                            <li><i class="bi bi-check-circle"></i> Community Chat Access</li>
+                            <li><i class="bi bi-check-circle"></i> Weekly Identity Reflection </li>
+                            <li><i class="bi bi-check-circle"></i> Community Chat Access</li>
+                        </ul>
+                    </div>
+                </div> {% endcomment %}
+            
+
+
+            {% for plan in plans %}
+            <div class="col-lg-4 col-md-6 col-sm-12 px-3">
+                <div class="pricing_card_body_div   {% if forloop.counter == 2   %}active_pri_card{% endif %}" style="">
+                    {% if forloop.second  %}
+                    {% endif %}
+                    {% if plan.tag %}
+                    <span class="popular_tag">{{ plan.tag }}</span>
+                        {% comment %} <span class="badge bg-warning text-dark mb-2">{{ plan.tag }}</span> {% endcomment %}
+                    {% endif %}
+                    <span class="pri_tag1 d-block mb-4">
+                        <img src="{% static 'assets/img/heart.png' %}" alt="" width="24">
+                        {{ plan.display_name }}
+                    </span>
+                    <h1 class="text-white mb-4">{{ plan.price_display }}</h1>
+                    <p>{{ plan.description }}</p>
+
+                    <form  method="post" action="{% url 'create_checkout_session' plan_name=plan.name %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary w-100 mt-2">{{ plan.button_label }}</button>
+                    </form>
+
+                    <ul class="mt-3">
+                        {% for feature in plan.features %}
+                            <li><i class="bi bi-check-circle"></i> {{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        </div>
+    </section>
+
+    <section class="profile_section">
+        <div class="container">
+            <div class="profile_text_div">
+                <h3>“Operator helps me start my day with focus. The prompts aren’t cheesy — they actually make me think. It’s simple, clean, and exactly what I needed to build better habits.</h3>
+                <div class="profile_inner">
+                    <img src="{% static "assets/img/pro_1.png" %}" alt="">
+                    <p>Vijaye Raji</p>
+                    <span>CEO of Statsig</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faqs_section">
+        <div class="container">
+            <h1 class="faq_title">FAQ’s</h1>
+            <div class="faqs_main_div">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span>01</span>
+                            <p>What is Operator?</p>
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Operator is a daily discipline tool built to help young men lead themselves. It’s not therapy. It’s  not motivation. It’s a system designed to sharpen focus, build identity, and guide action — day  by day.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <span>02</span>
+                            <p>Who is Operator for?</p>
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <span>03</span>
+                            <p>What can I expect after signing up?</p>
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            <span>04</span>
+                            <p>What’s the difference between the free and paid versions?</p>
+                        </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                            <span>05</span>
+                            <p>Can I get free access as a student?</p>
+                        </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore architecto dolor iure! Ullam assumenda aliquid nihil fugiat quo dignissimos dolorum minima quis. Recusandae iusto incidunt quia itaque! Magni, temporibus doloremque!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "footer.html" %}
+{% endblock body %}
+
+    

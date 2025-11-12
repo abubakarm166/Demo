@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@font-face {
+    font-family: "Clash_ExtraLight";
+    src: url(../fonts/Extralight.otf);
+}
+@font-face {
+    font-family: "Clash_Light";
+    src: url(../fonts/Light.otf);
+}
+@font-face {
+    font-family: "Clash_Medium";
+    src: url(../fonts/Medium.otf);
+}
+@font-face {
+    font-family: "Clash_Regular";
+    src: url(../fonts/Regular.otf);
+}
+@font-face {
+    font-family: "Clash_Bold";
+    src: url(../fonts/Bold.otf);
+}
+@font-face {
+    font-family: "Clash_SemiBold";
+    src: url(../fonts/Semibold.otf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Clash_Regular";
+    background-color: #010314;
+    background-image: url(../img/Homepage.png);
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.alert-container{
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    z-index: 99999999999999;
+}
+.ctrl_big_bg{
+    background-image: url(../img/main.jpg);
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.Header_section{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    transition: all 0.3s ease;
+}
+.Header_section.scrolled {
+    background-color: #0f1a1a;
+    background-image: radial-gradient(circle at center, rgba(0, 255, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at center, rgba(27, 27, 27, 0.6) 0%, #0f1a1a 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar-toggler{
+    border: none;
+    box-shadow: none !important;
+}
+.navbar-nav .nav-link{
+    font-weight: 400;
+    font-size: 16px;
+    color: #CECFD2;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #CECFD2; /* Change to your desired color */
+    transition: width 0.3s ease-in-out;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+.navbar-nav .nav-link.active{
+    font-weight: 500;
+    color: #CECFD2;
+}
+.navbar-brand{
+    font-family: "Clash_Light";
+    color: #FFFFFF !important;
+}
+.navbar-brand img{
+    margin-right: 10px;
+}
+.hero_section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 0px 60px 0px;
+}
+.nav_btns{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav_btns .login_btn{
+    border: none;
+    background-color: transparent;
+    color: #CECFD2;
+    font-weight: 400;
+    font-size: 16px;
+}
+.signup_btn2{
+    box-shadow: 0px 0px 0px 3px #1CFFFF2B;
+    /* box-shadow: 0px 1px 2px 0px #1DFFFF8C; */
+    background: linear-gradient(0deg, #196264, #196264),
+    linear-gradient(180deg, rgba(18, 40, 55, 0) -175%, rgba(74, 240, 255, 0.5) 140%);
+    border: 1px solid #FFFFFF;
+    border-radius: 30px;
+    padding: 8px 20px;
+    /* border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0) 100%); */
+}
+.UI_btn {
+    min-width: 140px;
+    box-shadow: 0px 0px 0px 3px #1CFFFF2B;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: #2b959c;
+}
+/* .UI_btn {
+    background-color: #1DFFFF8C;
+    box-shadow: 0px 0px 0px 3px #1CFFFF2B;
+    border: none;
+    padding: 10px 20px;
+    min-width: 140px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-family: "Clash_Light";
+}
+.UI_btn::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    z-index: -1;
+    border-radius: 30px;
+    background-image: url(../../assets/img/border_bg.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+} */
+.hero_text_main_div{
+    width: 100%;
+    max-width: 1024px;
+    text-align: center;
+    margin: auto;
+}
+.hero_text_main_div span{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.16) 100%),
+    linear-gradient(0deg, rgba(27, 51, 52, 0.3), rgba(27, 51, 52, 0.3));
+    box-shadow: 
+        0px 0px 0px 3px #1CFFFF2B, 
+        0px 1px 2px 0px #1DFFFF8C;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+.hero_text_main_div span i{
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+}
+.hero_text_main_div span::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    z-index: -1;
+    border-radius: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.hero_text_main_div h1{
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) -90.17%, #FFFFFF 108.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 89px;
+    letter-spacing: -2%;
+    text-align: center;
+    font-family: "Clash_Medium";
+    margin-top: 25px;
+}
+.hero_text_main_div p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0%;
+    text-align: center;
+    background: linear-gradient(180deg, #EAEAEA 0%, rgba(234, 234, 234, 0) 321.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 15px;
+    max-width: 800px;
+    margin: auto;
+}
+.hero_text_main_div button{
+    min-width: 180px;
+    margin-top: 25px;
+}
+.hero_text_main_div h6{
+    background: linear-gradient(180deg, rgba(234, 234, 234, 0.5) 0%, rgba(234, 234, 234, 0) 321.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 35px;
+}
+.hero_logos_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.hero_logos_main img{
+    height: 27px;
+    width: auto;
+}
+.works_section{
+    margin-top: 200px;
+}
+.title_div h1{
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 89px;
+    letter-spacing: 4%;
+    text-transform: capitalize;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) -90.17%, #FFFFFF 108.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-family: "Clash_Medium";
+}
+.works_card_main_div{
+    margin-top: 20px;
+}
+.works_card_inner{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(27, 27, 27, 0) 0%, rgba(27, 27, 27, 0) 49.48%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(50% 50% at 50% 50%, rgba(12, 207, 113, 0.1) 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    border: 1px solid #FFFFFF0F;
+    box-shadow: 0px 4px 10px 0px #0000004D;
+    backdrop-filter: blur(25px);
+    min-height: 150px;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin-top: -10px;
+}
+.works_card_text1 h3{
+    font-family: "Clash_Medium";
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 35px;
+    letter-spacing: 4%;
+    text-transform: capitalize;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) -90.17%, #FFFFFF 108.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0;
+}
+.works_card_text2 p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 4%;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) -90.17%, #FFFFFF 108.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0;
+}
+.Operator_section{
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.operator_text_main{
+    text-align: center;
+}
+.operator_text_main h1{
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0) -90.17%, #FFFFFF 108.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-family: "Clash_Medium";
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 89px;
+    letter-spacing: 4%;
+    text-align: center;
+    text-transform: capitalize;
+}
+.operator_text_main p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    background: linear-gradient(180deg, #EAEAEA 0%, rgba(234, 234, 234, 0) 321.67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    max-width: 768px;
+    margin: auto;
+}
+.operator_text_main button{
+    margin-top: 30px;
+}
+.pricing_section{
+    padding: 50px 0px;
+}
+.pricing_title_div{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.pricing_title_div h1{
+    font-family: "Clash_Medium";
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    vertical-align: middle;
+    margin-bottom: 0;
+    color: #FFFFFF;
+}
+.pricing_title_div p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #828386;
+} 
+.pricing_card_body_div{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(27, 27, 27, 0) 0%, rgba(27, 27, 27, 0) 49.48%),
+    radial-gradient(50% 50% at 50% 50%, rgba(12, 207, 113, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    border: 1px solid #FFFFFF0F;
+    box-shadow: 0px 4px 10px 0px #0000004D;
+    padding: 20px;
+    border-radius: 16px;
+    position: relative;
+    margin-top: 40px;
+}
+.pricing_card_body_div.active_pri_card{
+    background-color: #0f1a1a;
+    background-image:
+        radial-gradient(circle at center, rgba(0, 255, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at center, rgba(27, 27, 27, 0.6) 0%, #0f1a1a 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:80px 20px;
+}
+.pri_tag1{
+    border: 1px solid #FFFFFF0F;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)),
+    linear-gradient(92deg, rgba(16, 141, 81, 0.2) 15.83%, rgba(23, 23, 23, 0.2) 63.01%);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.9px;
+    letter-spacing: 0.65px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #CECECE;
+    padding: 12px 9px;
+    border-radius: 22px;
+}
+.pri_tag1 img{
+    height: 17px;
+    width: auto;
+    margin-right: 4px;
+}
+.pri_tag2{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    linear-gradient(92deg, rgba(192, 112, 216, 0.3) 15.83%, rgba(23, 23, 23, 0.3) 63.01%),
+    radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.9px;
+    letter-spacing: 0.65px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #CECECE;
+    padding: 4px 6px;
+    border-radius: 16px;
+    border: 1px solid #FFFFFF0F;
+}
+.pri_tag2 img{
+    height: 17px;
+    width: auto;
+    margin-right: 4px;
+}
+.pricing_card_body_div h1{
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 39.6px;
+    letter-spacing: -1px;
+    vertical-align: middle;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+.popular_tag{
+    background: linear-gradient(37deg, rgba(11, 202, 202, 0.2) 11.56%, rgba(0, 0, 0, 0) 86.3%),
+    linear-gradient(222deg, rgba(11, 202, 202, 0.12) 8.7%, rgba(0, 0, 0, 0) 37.9%);
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16.9px;
+    letter-spacing: 0.39px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #CECECE;
+    padding: 6px 10px;
+    border-radius: 16px;
+    border: 1px solid #FFFFFF0F;
+    font-family: "Inter", sans-serif;
+    
+}
+.pricing_card_body_div h1 sub{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 39.6px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+.pricing_card_body_div p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.8px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #ffffff9d;
+}
+.pricing_card_body_div h6{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 39.6px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #ffffff;
+}
+.pricing_card_body_div button{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(222, 222, 222, 0.08) 100%);
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: "Clash_Light";
+    margin: 30px 0px;
+}
+.pricing_card_body_div.active_pri_card button{
+    background: linear-gradient(0deg, #F3F2FF, #F3F2FF),
+    linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%);
+    color: #09090A;
+    padding: 15px 0px;
+}
+.pricing_card_body_div ul{
+    padding-left: 0;
+}
+.pricing_card_body_div ul li{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #E2E8F0;
+    list-style-type: none;
+    margin-top: 15px;
+    font-family: "Clash_Light";
+}
+.pricing_card_body_div.active_pri_card ul li{
+    margin-top: 25px;
+}
+.pricing_card_body_div ul li i{
+    color: #434343;
+    margin-right: 10px;
+}
+.profile_section{
+    background-image: url(../../assets/img/profile.png);
+    height: auto;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile_text_div{
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+    text-align: center;
+}
+.profile_text_div h3{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 46px;
+    letter-spacing: 2px;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+.profile_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+.profile_inner img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile_inner p{
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.8px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+.profile_inner span{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.8px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    color: #FFFFFF80;
+}
+.faqs_section{
+    height: auto;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.faq_title{
+    font-family: "Clash_SemiBold";
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #ffffff;
+}
+.faqs_main_div{
+    margin-top: 50px;
+}
+.faqs_main_div .accordion-button::after{
+    background-image: url(../img/Union.png);
+    height: 100px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    border-left: 1px solid #2A2B3A;
+} 
+.faqs_main_div .accordion-button:not(.collapsed)::after{
+    transform: rotate(0);
+}
+.faqs_main_div .accordion-item{
+    border: none !important;
+}
+.faqs_main_div .accordion-button{
+    border: 1px solid #2A2B3A;
+    background-color: #090e13;
+    box-shadow: none !important;
+    padding: 0; 
+    display: flex;
+    align-items: center;
+}
+.faqs_main_div .accordion-button p{
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-family: "Clash_Medium";
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    padding: 10px 12px;
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.faqs_main_div .accordion-button span{
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25px 15px;
+    border-right: 1px solid #2A2B3A;
+    min-width: 50px;
+    min-height: 100px;
+}
+.faqs_main_div .accordion-body{
+    background-color: #090e13;
+    color: #FFFFFF80;
+    border-right: 1px solid #2A2B3A;
+    border-left: 1px solid #2A2B3A;
+}
+.footer_section{
+    padding: 50px 0px;
+}
+.footer_txt1{
+    margin-top: 20px;
+}
+.footer_txt1 h2{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 30%, rgba(255, 255, 255, 0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-top: 10px;
+}
+.footer_txt2{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+.footer_txt2 h6{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #FFFFFFCC;
+}
+.footer_txt2 a{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #77798F;
+    text-decoration: none;
+}
+.last_footer{
+    background-color: #010314;
+    padding: 14px 0px;
+}
+.last_footer_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.lf_txt1 p{
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #77798F;
+}
+.lf_txt2{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.lf_txt2 a{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0%;
+    color: #77798F;
+    text-decoration: none;
+}
+@media (max-width: 992px){
+    .navbar-nav{
+        background-color: #0f1a1a;
+        background-image: radial-gradient(circle at center, rgba(0, 255, 255, 0.05) 0%, transparent 40%), radial-gradient(circle at center, rgba(27, 27, 27, 0.6) 0%, #0f1a1a 100%);
+        padding: 10px 15px;
+    }
+    .Header_section.scrolled .navbar-nav{
+        background-color: transparent;
+    }
+}
+@media (max-width: 576px) {
+    .operator_text_main h1{
+        font-size: 28px;
+        line-height: normal;
+    }
+    .title_div h1 {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .pricing_title_div h1 {
+        font-family: "Clash_Medium";
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .profile_section {
+        padding: 50px 20px;
+    }
+    .profile_text_div h3 {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+    }
+    .faqs_section {
+        height: auto;
+        min-height: 100vh;
+        padding: 50px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .hero_text_main_div h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
