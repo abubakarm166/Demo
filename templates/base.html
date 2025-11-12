@@ -44,7 +44,7 @@
                             <a class="nav-link" href="#Pricing">Pricing</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url "chatbot" %}">Chatbot</a>
+                            <a class="nav-link" href="{% url "demo" %}">Chat Demo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Blog">Blog</a>
@@ -52,25 +52,10 @@
                     </ul>
 
                     <div class="nav_btns">
-                        {% if ENABLE_AUTH %}
-                            {% if user.is_authenticated %}
-                                <a href="{% url 'logout' %}">
-                                    <button type="submit" class="login_btn">Log out</button>
-                                </a>
-                            {% else %}
-                                <a href="{% url 'login' %}">
-                                    <button type="button" class="login_btn">Log in</button>
-                                </a>
-                                <a href="{% url 'sign' %}">
-                                    <button type="button" class="UI_btn">Sign Up</button>
-                                </a>
-                            {% endif %}
-                        {% else %}
-                            <span class="badge bg-info text-dark me-2">Demo Mode</span>
-                            <a href="{% url 'chatbot' %}">
-                                <button type="button" class="UI_btn">Try the Chat</button>
-                            </a>
-                        {% endif %}
+                        <span class="badge bg-info text-dark me-2">Demo Mode</span>
+                        <a href="{% url 'demo' %}">
+                            <button type="button" class="UI_btn">Try the Chat</button>
+                        </a>
                     </div>
 
                     

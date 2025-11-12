@@ -1,81 +1,65 @@
 # Operator MVP Demo Deployment
 
-This repository now ships with a **demo-friendly build** of the Operator MVP Django project.  
-The goal is to provide a live, zero-risk showcase that looks and behaves like the production product while avoiding real authentication, payments, or API usage.
+This repository now ships with a **demo-friendly build** of the Operator MVP Django project.
+It showcases the product without hitting paid services, requiring authentication, or touching Stripe.
 
-## What's Included
-- Demo mode defaults (mock chat replies, no Stripe checkout, auth disabled).
-- Toggleable settings to re-enable full functionality when needed.
-- `.env.example` template with all configuration keys.
-- Updated `requirements.txt` and Whitenoise-based static serving for hosting.
-- Documentation for local setup and deployment.
+## Key Demo Behaviours
+- `/` serves the marketing homepage.
+- `/demo` renders the chat interface (same visuals as production, but no login required).
+- `/api/coach/` returns an instant canned JSON response:
+  ```json
+  { "message": "Hi there! This is a demo response." }
+  ```
+- No sign-up, login, or payment controls are shown anywhere in the UI.
+- All OpenAI/Stripe integrations have been removed from the runtime code path.
 
-## Quick Start (Demo Mode)
-1. **Clone & install**
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # Windows
-   pip install -r requirements.txt
-   ```
-2. **Configure environment**
-   ```bash
-   copy .env.example .env
-   ```
-   (Adjust values as desired; defaults keep demo mode active.)
-3. **Run the app**
-   ```bash
-   python manage.py migrate
-   python manage.py runserver
-   ```
-   Visit `http://127.0.0.1:8000/` to explore the demo.
+## Local Quick Start
+```bash
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+copy .env.example .env
+python manage.py migrate
+python manage.py runserver
+```
+Visit `http://127.0.0.1:8000/` for the homepage and `http://127.0.0.1:8000/demo/` for the chat demo.
 
-## Deployment Guide
-These instructions assume a platform such as **Render** or **Railway**:
-
-1. Push this repository to a Git host (GitHub, GitLab, etc.).
-2. Create a new web service and select the repo.
-3. Pick the following build & run commands:
-   - Build command: `pip install -r requirements.txt`
-   - Run command: `gunicorn core.wsgi`
-4. Add environment variables (copy from `.env.example`). For a demo:
+## Deploying on a Free Tier (Render Example)
+1. Push this repo to GitHub/GitLab.
+2. Create a **Render Web Service** and connect the repo.
+3. Set the build & start commands:
+   - Build: `pip install -r requirements.txt`
+   - Start: `gunicorn core.wsgi`
+4. Configure environment variables:
+   - `DEBUG=false`
    - `DEMO_MODE=true`
-   - `ENABLE_AUTH=false`
-   - `ENABLE_REAL_PAYMENTS=false`
-   - `ENABLE_REAL_CHAT=false`
    - `ALLOWED_HOSTS=your-app.onrender.com`
    - `CSRF_TRUSTED_ORIGINS=https://your-app.onrender.com`
-5. Enable persistent storage (optional) if you want the SQLite database to survive restarts.
-6. Trigger the first deploy. Once live, collectstatic will run automatically thanks to Whitenoise.
+   - Leave all API keys empty — they’re not needed for the demo.
+5. Enable `STATIC_URL` handling (Render does this automatically with Whitenoise).
+6. Deploy. After the first successful build, note the public URL and share it as the live demo link.
 
-### Switching to the Full Product
-Flip the following environment variables:
+## Switching Back to Full Mode
+Toggle these environment variables and re-deploy:
 
-| Purpose            | Demo Default | Full Product |
-|--------------------|--------------|--------------|
-| Authentication     | `ENABLE_AUTH=false`  | `ENABLE_AUTH=true` |
-| Stripe Checkout    | `ENABLE_REAL_PAYMENTS=false` | `ENABLE_REAL_PAYMENTS=true` *(requires Stripe keys & price IDs)* |
-| OpenAI Chat        | `ENABLE_REAL_CHAT=false` | `ENABLE_REAL_CHAT=true` *(requires `OPENAI_API_KEY`)* |
-| Demo chat replies  | `DEMO_CHAT_RESPONSES` list | Update or unset for custom copy |
+| Feature           | Demo Setting | Production Setting | Notes |
+|-------------------|--------------|--------------------|-------|
+| Authentication     | `ENABLE_AUTH=false`  | `ENABLE_AUTH=true` | Restore login/signup templates and URLs. |
+| Stripe             | `ENABLE_REAL_PAYMENTS=false` | `ENABLE_REAL_PAYMENTS=true` | Requires Stripe keys and price IDs. |
+| OpenAI Chat        | `ENABLE_REAL_CHAT=false` | `ENABLE_REAL_CHAT=true` | Requires `OPENAI_API_KEY`. |
 
-Make sure to add:
-- `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID_*`
-- `OPENAI_API_KEY`
-- Email SMTP configuration if password resets or notifications are needed.
+(Additional instructions for reinstating full functionality are kept in the original code comments.)
 
-## Feature Parity in Demo Mode
-- **Chatbot** returns high-quality scripted responses derived from `DEMO_CHAT_RESPONSES`.
-- **Pricing cards** render Stripe plan details but skip checkout.
-- **Auth flows** are replaced with friendly notices to keep visitors focused on the product tour.
-
-## Testing
-Run the built-in Django test suite (coverage depends on existing tests):
-```bash
-python manage.py test
-```
+## Acceptance Checklist
+- ✅ `/` homepage loads.
+- ✅ `/demo` shows the chat experience.
+- ✅ `/api/coach/` responds instantly with mock JSON.
+- ✅ UI hides login, signup, and payment actions.
+- ✅ No outbound OpenAI or Stripe requests occur.
+- ✅ Runs comfortably on Render/Railway free tiers.
 
 ## Live Demo URL
-> _Add your deployed link here once the service is live._
+_Add the deployed link here once you publish to a hosting provider._
 
----
-Need help or want to switch back to production mode? Toggle the environment variables, add your real keys, and redeploy—no code changes required.
+Need help or want to extend the demo? Drop a note in the repo issues — happy to assist.
 
