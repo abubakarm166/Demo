@@ -170,11 +170,8 @@
                     </span>
                     <h1 class="text-white mb-4">{{ plan.price_display }}</h1>
                     <p>{{ plan.description }}</p>
-
-                    <form  method="post" action="{% url 'create_checkout_session' plan_name=plan.name %}">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary w-100 mt-2">{{ plan.button_label }}</button>
-                    </form>
+ 
+                    <a href="{% url 'demo' %}?plan={{ plan.name }}" class="btn btn-primary w-100 mt-2">{{ plan.button_label }}</a>
 
                     <ul class="mt-3">
                         {% for feature in plan.features %}

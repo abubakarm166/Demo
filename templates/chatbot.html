@@ -151,7 +151,11 @@
         <section class="chatbot_section">
             <div class="container-fluid">
                 <div class="chatbot_main_div">
-                 
+                {% if DEMO_MODE %}
+                    <div class="alert alert-info" role="alert">
+                        This chatbot runs entirely in demo mode. All responses are canned, and no external APIs are contacted.
+                    </div>
+                {% endif %}
 
 
                     <div class="main" id="main">
@@ -274,13 +278,13 @@
     }
 
     try {
-      const CHAT_ENDPOINT = "{% url 'smart_chat_api' %}";
+      const CHAT_ENDPOINT = "{% url 'coach_demo_api' %}";
       const response = await fetch(CHAT_ENDPOINT, {
         method: 'POST',
         body: formData,
       });
       const data = await response.json();
-      botDiv.textContent = data.response || data.error || 'No response received.';
+      botDiv.textContent = data.message || data.error || 'No response received.';
     } catch (error) {
       botDiv.textContent = '❌ Error getting response.';
       botDiv.style.color = 'red';
